@@ -1,0 +1,51 @@
+# Project: Project1
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = Main.o Raagas.o Compose.o PlayMusic.o Filecreate.o Learnraga.o "Graphic\ gets.o" "Display\ list.o" $(RES)
+LINKOBJ  = Main.o Raagas.o Compose.o PlayMusic.o Filecreate.o Learnraga.o "Graphic gets.o" "Display list.o" $(RES)
+LIBS =  -L"lib"  -lbgi -lgdi32 -lcomdlg32 -luuid -loleaut32 -lole32 ../../../../Dev-Cpp/lib/libwinmm.a  
+INCS =  -I"include" 
+CXXINCS =  -I"include" 
+BIN  = ProjSid.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before ProjSid.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "ProjSid.exe" $(LIBS)
+
+Main.o: Main.cpp
+	$(CPP) -c Main.cpp -o Main.o $(CXXFLAGS)
+
+Raagas.o: Raagas.cpp
+	$(CPP) -c Raagas.cpp -o Raagas.o $(CXXFLAGS)
+
+Compose.o: Compose.cpp
+	$(CPP) -c Compose.cpp -o Compose.o $(CXXFLAGS)
+
+PlayMusic.o: PlayMusic.cpp
+	$(CPP) -c PlayMusic.cpp -o PlayMusic.o $(CXXFLAGS)
+
+Filecreate.o: Filecreate.cpp
+	$(CPP) -c Filecreate.cpp -o Filecreate.o $(CXXFLAGS)
+
+Learnraga.o: Learnraga.cpp
+	$(CPP) -c Learnraga.cpp -o Learnraga.o $(CXXFLAGS)
+
+"Graphic\ gets.o": Graphic\ gets.cpp
+	$(CPP) -c "Graphic gets.cpp" -o "Graphic gets.o" $(CXXFLAGS)
+
+"Display\ list.o": Display\ list.cpp
+	$(CPP) -c "Display list.cpp" -o "Display list.o" $(CXXFLAGS)
